@@ -261,7 +261,7 @@ tbody tr:hover {
 
     /* Képek kisebb méretezése */
     #inlineImg, .service-container_vevoknek img {
-        width: 100%; /* A kép mérete igazodik */
+        width: 40%; /* A kép mérete igazodik */
         height: auto; /* Arányosan méretezett kép */
     }
 
