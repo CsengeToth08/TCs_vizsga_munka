@@ -16,18 +16,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigáció -->
-    <nav>
-      
-        <button class="navbar-toggler" onclick="toggleMenu()">☰</button>
-        <div class="navbar-menu" id="navbarMenu">
-            <a href="index.html">Főoldal</a>
-            <a href="szolgaltatasok.html">Szolgáltatások</a>
-            <a href="ingatlan_kinalat.html">Ingatlan kínálat</a>
-            <a href="kapcsolat.html">Kapcsolat</a>
-            <a href="rolam.html">Rólam</a>
-        </div>
-    </nav>
+   <!-- Navigáció -->
+<nav>
+    <button class="navbar-toggler" onclick="toggleMenu()">☰</button>
+    <div class="navbar-menu" id="navbarMenu">
+        <a href="index.html">Főoldal</a>
+        <a href="szolgaltatasok.html">Szolgáltatások</a>
+        <a href="ingatlan_kinalat.html">Ingatlan kínálat</a>
+        <a href="kapcsolat.html">Kapcsolat</a>
+        <a href="rolam.html">Rólam</a>
+    </div>
+</nav>
+
  <!-- Hero -->
  <div class="hero">
     <h1>Találd meg álmaid otthonát még ma!!</h1>
@@ -77,35 +77,37 @@
 
 <br>
 
-    <div class="content">
-    <h2>Üdvözöllek!</h2>    
-        <h3>Kállai Rózsa vagyok! </h3>        
-            
-        <br>
-
-        <p><b>2019</b> októberében csatlakoztam az <b>Otthon Centrum</b> hálózathoz, és azóta is <b>sikeresen</b> képviselem ügyfeleimet az ingatlanpiacon. <br>
-            <b>Öt éves OKJ</b>-s szakirányú végzettséggel és gyakorlati tapasztalattal rendelkezem, amelyet 2022 óta saját vállalkozásomban kamatoztatok. <br>
-            Az egyéni vállalkozásomat azóta is <b>eredményesen</b> működtetem. <br>
-            <br>
-            Számomra az <b>ügyfelek bizalma</b> és <b>kizárólagosságuk</b> rendkívül <b>fontos</b>, hiszen minden sikeres tranzakció alapja az alapos és kölcsönös együttműködés. 
-            Célom a tisztességes, empatikus és korrekt ingatlanközvetítés, amellyel eddig számos sikeres üzletet zártam.
-            <br>
-            <br>
-            Fő tevékenységem a lakóingatlanok, telkek, zártkertek közvetítése, értékesítése és bérbeadása. 
-            Eddig összesen <b>370 ingatlan</b> menedzselésére kaptam megbízást, amelyek mindegyikét a legnagyobb odafigyeléssel és szakértelemmel kezeltem.
-            <br>
-            Emellett rövid határidőn belül vállalom energetikai tanúsítványok előkészítését is.
-            <br>
-            <br>
-            <b> Fontos megjegyeznem, hogy kizárólag magánszemélyek megbízásait tudom elfogadni.</b></p>
-
-            <br>
-            <br>
-            <br>    
-            <br>
-
-                
-
+    <div id="tartalom">
+        <div class="content">
+            <h2>Üdvözöllek!</h2>    
+                <h3>Kállai Rózsa vagyok! </h3>        
+                    
+                <br>
+        
+                <p><b>2019</b> októberében csatlakoztam az <b>Otthon Centrum</b> hálózathoz, és azóta is <b>sikeresen</b> képviselem ügyfeleimet az ingatlanpiacon. <br>
+                    <b>Öt éves OKJ</b>-s szakirányú végzettséggel és gyakorlati tapasztalattal rendelkezem, amelyet 2022 óta saját vállalkozásomban kamatoztatok. <br>
+                    Az egyéni vállalkozásomat azóta is <b>eredményesen</b> működtetem. <br>
+                    <br>
+                    Számomra az <b>ügyfelek bizalma</b> és <b>kizárólagosságuk</b> rendkívül <b>fontos</b>, hiszen minden sikeres tranzakció alapja az alapos és kölcsönös együttműködés. 
+                    Célom a tisztességes, empatikus és korrekt ingatlanközvetítés, amellyel eddig számos sikeres üzletet zártam.
+                    <br>
+                    <br>
+                    Fő tevékenységem a lakóingatlanok, telkek, zártkertek közvetítése, értékesítése és bérbeadása. 
+                    Eddig összesen <b>370 ingatlan</b> menedzselésére kaptam megbízást, amelyek mindegyikét a legnagyobb odafigyeléssel és szakértelemmel kezeltem.
+                    <br>
+                    Emellett rövid határidőn belül vállalom energetikai tanúsítványok előkészítését is.
+                    <br>
+                    <br>
+                    <b> Fontos megjegyeznem, hogy kizárólag magánszemélyek megbízásait tudom elfogadni.</b></p>
+        
+                    <br>
+                    <br>
+                    <br>    
+                    <br>
+        
+                        
+        
+            </div>
     </div>
 
     <!-- Lábléc -->
@@ -124,10 +126,18 @@
        
     <script>
         /*hamburger menü */
-            function toggleMenu() {
-            const menu = document.getElementById("navbarMenu");
-            menu.classList.toggle("responsive");
-            }
+        function toggleMenu() {
+    const navbarMenu = document.getElementById("navbarMenu");
+    navbarMenu.classList.toggle("show");
+    }
+
+    /*tartalom ugrása*/
+    document.addEventListener("DOMContentLoaded", function () {
+    const tartalom = document.getElementById("tartalom");
+    if (tartalom) {
+        tartalom.scrollIntoView({ behavior: "smooth" });
+    }
+});
        </script>
 
 

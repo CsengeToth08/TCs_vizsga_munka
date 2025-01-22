@@ -7,11 +7,12 @@ body{
 }
 
 /*--------------------------------nav rész-------------------------------------------------------------------------*/
+/* Alapstílusok */
 nav {
     position: fixed; /* A navigációt rögzítjük a képernyő tetejére */
-    top: 0; /* A tetején lesz */
-    left: 0; /* Balra igazítjuk */
-    width: 100%; /* Kitölti a teljes szélességet */    
+    top: 0;
+    left: 0;
+    width: 100%;    
     background-color: #d8c2ba;
     color: white;
     padding: 10px 20px;
@@ -23,6 +24,7 @@ nav {
     font-size: 22px;
     font-weight: bold;
     font-style: normal;
+    z-index: 1000; /* Az elem mindig legfelül jelenik meg */
 }
 
 /* Hamburger menü alapértelmezett stílusok */
@@ -31,34 +33,66 @@ nav {
     gap: 15px;
     justify-content: center;
 }
-.navbar-menu a { /*menü szöveg formázása*/
+.navbar-menu a {
     color: rgb(0, 0, 0);
     padding: 8px 12px;
     border-radius: 30px;
     transition: background-color 0.3s;
     text-decoration: none;
-
 }
-.navbar-menu a:hover { /*kijelölt menüpont effektje*/
+.navbar-menu a:hover {
     background-color: #A48C84;
     border-radius: 30px;
 }
 .navbar-toggler {
-    display: none; /* A hamburger menü rejtve alapértelmezés szerint */
+    display: none; /* Alapértelmezés szerint rejtve */
     font-size: 1.5rem;
     cursor: pointer;
     background: none;
     border: none;
-    color: white;
+    color: black; /* Jól láthatóvá tesszük */
+    position: absolute;
+    top: 10px;
+    left: 20px; /* Az ikon a bal oldalra kerül */
 }
-
-
 
 /* Mobilra optimalizált menü */
-.navbar-menu.responsive a {
-    margin: 10px 0; /* A linkek között távolságot adunk */
-    text-align: center; /* A linkek középre igazítva */
+@media screen and (max-width: 768px) {
+    nav {
+        justify-content: flex-start; /* A navigáció balra igazítása */
+        padding: 10px 20px;
+    }
+
+    .navbar-menu {
+        display: none; /* Alapértelmezés szerint rejtett */
+        flex-direction: column; /* Függőleges elrendezés */
+        position: absolute;
+        top: 60px;
+        left: 20px; /* Balra igazítás */
+        background-color: #d8c2ba;
+        padding: 10px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        align-items: flex-start; /* Linkek balra igazítása */
+    }
+
+    .navbar-menu a {
+        margin: 10px 0;
+        text-align: left; /* Szöveg balra igazítása */
+    }
+
+    .navbar-menu.show {
+        display: flex; /* Menü lenyitása */
+    }
+
+    .navbar-toggler {
+        display: block; /* Hamburger ikon megjelenítése */
+        position: absolute;
+        top: 10px;
+        left: 20px; /* Bal oldalon helyezzük el az ikont */
+    }
 }
+
 
 /*----------------------------------nav rész-----------------------------------------------------------------------*/
 

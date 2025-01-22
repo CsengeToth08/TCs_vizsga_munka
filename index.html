@@ -14,9 +14,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&display=swap" rel="stylesheet">
         
     
+
     
-    
-    <!-- Navigáció -->
+<!-- Navigáció -->
 <nav>
     <button class="navbar-toggler" onclick="toggleMenu()">☰</button>
     <div class="navbar-menu" id="navbarMenu">
@@ -25,9 +25,10 @@
         <a href="ingatlan_kinalat.html">Ingatlan kínálat</a>
         <a href="kapcsolat.html">Kapcsolat</a>
         <a href="rolam.html">Rólam</a>
- 
     </div>
 </nav>
+
+
 
     <!-- Hero -->
 <div class="hero">
@@ -221,11 +222,12 @@
 
 
    <script>
-    /*hamburger menü */
-        function toggleMenu() {
-        const menu = document.getElementById("navbarMenu");
-        menu.classList.toggle("responsive");
-        }
+        /*hamburger menü */
+            function toggleMenu() {
+            const navbarMenu = document.getElementById("navbarMenu");
+            navbarMenu.classList.toggle("show");
+    }
+
    </script>
 </body>
 </html>

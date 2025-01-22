@@ -16,18 +16,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&display=swap" rel="stylesheet">
 </head>
 <body>
-        <!-- Navigáció -->
-    <nav>
-      
-        <button class="navbar-toggler" onclick="toggleMenu()">☰</button>
-        <div class="navbar-menu" id="navbarMenu">
-            <a href="index.html">Főoldal</a>
-            <a href="szolgaltatasok.html">Szolgáltatások</a>
-            <a href="ingatlan_kinalat.html">Ingatlan kínálat</a>
-            <a href="kapcsolat.html">Kapcsolat</a>
-            <a href="rolam.html">Rólam</a>
-        </div>
-    </nav>
+
+
+    
+    <!-- Navigáció -->
+<nav>
+    <button class="navbar-toggler" onclick="toggleMenu()">☰</button>
+    <div class="navbar-menu" id="navbarMenu">
+        <a href="index.html">Főoldal</a>
+        <a href="szolgaltatasok.html">Szolgáltatások</a>
+        <a href="ingatlan_kinalat.html">Ingatlan kínálat</a>
+        <a href="kapcsolat.html">Kapcsolat</a>
+        <a href="rolam.html">Rólam</a>
+    </div>
+</nav>
+
 
       <!-- Hero -->
 <div class="hero">
@@ -71,7 +74,7 @@
 
      <!-- Content -->
       <div>
-            <div>
+            <div id="tartalom">
                 <div class="Szolgáltatasaim">                
                     <h2>Szolgáltatásaim:</h2>
                 </div>
@@ -120,10 +123,18 @@
 
     <script>
         /*hamburger menü */
-            function toggleMenu() {
-            const menu = document.getElementById("navbarMenu");
-            menu.classList.toggle("responsive");
-            }
+        function toggleMenu() {
+    const navbarMenu = document.getElementById("navbarMenu");
+    navbarMenu.classList.toggle("show");
+    }
+
+/*tartalom ugrása*/
+    document.addEventListener("DOMContentLoaded", function () {
+    const tartalom = document.getElementById("tartalom");
+    if (tartalom) {
+        tartalom.scrollIntoView({ behavior: "smooth" });
+    }
+});
        </script>
        
 </body>

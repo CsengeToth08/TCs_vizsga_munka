@@ -16,16 +16,17 @@
 </head>
 <body>
     <!-- Navigáció -->
-    <nav>
-        <button class="navbar-toggler" onclick="toggleMenu()">☰</button>
-        <div class="navbar-menu" id="navbarMenu">
-            <a href="index.html">Főoldal</a>
-            <a href="szolgaltatasok.html">Szolgáltatások</a>
-            <a href="ingatlan_kinalat.html">Ingatlan kínálat</a>
-            <a href="kapcsolat.html">Kapcsolat</a>
-            <a href="rolam.html">Rólam</a>
-        </div>
-    </nav>
+<nav>
+    <button class="navbar-toggler" onclick="toggleMenu()">☰</button>
+    <div class="navbar-menu" id="navbarMenu">
+        <a href="index.html">Főoldal</a>
+        <a href="szolgaltatasok.html">Szolgáltatások</a>
+        <a href="ingatlan_kinalat.html">Ingatlan kínálat</a>
+        <a href="kapcsolat.html">Kapcsolat</a>
+        <a href="rolam.html">Rólam</a>
+    </div>
+</nav>
+
 
     <!-- Hero -->
 <div class="hero">
@@ -67,12 +68,15 @@
 
 <hr>
 
-        <!-- Ingatlan Kínálat -->
+        <div id="tartalom">
+            <!-- Ingatlan Kínálat -->
         <div>
             <h2>Kínálatomban lévő ingatlanok:</h2>
             <main class="property-list">
                 <div class="property-card" onclick="showAdditionalImages(1)">
                     <img src="./img/ház1.jpg" alt="Ház 1">
+                    <link rel="stylesheet" href="https://www.oc.hu/ingatlanok/H494103">
+
                     <div class="property-info">
                         <p><strong>Ár:</strong> 49 900 000 Ft</p>
                         <p><strong>Terület:</strong> 123 m²</p>
@@ -169,12 +173,13 @@
                     </div>
                 </div>
             </main>
+        </div>
 
-            <!-- Modal a további képekhez -->
+             <!-- Modal a további képekhez -->
             <div id="imageModal" class="modal">
-                <div class="modal-content">
+                 <div class="modal-content">
                     <span class="close" onclick="closeModal()">&times;</span>
-                    <div id="modalImages"></div>
+                    <div id="modalImages">
                 </div>
             </div>
         </div>
@@ -206,10 +211,18 @@
 
     <script>
         /*hamburger menü */
-            function toggleMenu() {
-            const menu = document.getElementById("navbarMenu");
-            menu.classList.toggle("responsive");
-            }
+        function toggleMenu() {
+    const navbarMenu = document.getElementById("navbarMenu");
+    navbarMenu.classList.toggle("show");
+    }
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const tartalom = document.getElementById("tartalom");
+    if (tartalom) {
+        tartalom.scrollIntoView({ behavior: "smooth" });
+    }
+});
        </script>
        
 </body>
