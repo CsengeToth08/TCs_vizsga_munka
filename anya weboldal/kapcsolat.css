@@ -1,0 +1,179 @@
+/*------------------------------------kapcsolat.html---------------------------------------------------------------------------------*/
+
+/*kapcsolat oldal térkép formázása*/
+.google-map {
+    width: 80%;  /* A térkép szélessége 80% */
+    margin: 0 auto;  /* Középre igazítás */
+    margin-top: 50px; /* Alapértelmezett margó, hogy legyen egy kis térköz */
+    transition: margin-top 0.3s ease; /* Zökkenőmentes átmenet, ha a form aktiválódik */
+}
+
+.google-map iframe {
+    width: 100%;    /* A térkép szélessége a szülő elem szélességéhez igazítva */
+    height: 400px;  /* Állítható magasság */
+    border: none;   /* A térkép körüli keret eltávolítása */
+}
+/* Form megjelenéskor térköz hozzáadása a Google Térképhez */
+.form-container.active ~ .google-map {
+    margin-top: 200px; /* Ha a form aktív, nagyobb térköz a térkép előtt */
+}
+
+
+/* Kép stílus - középre igazítás és 80%-os szélesség */
+#ocLogo {
+    width: 80%;     /* A kép szélessége 80% */
+    display: block; /* Kép blokk típusú elem legyen */
+    margin: 20px auto; /* Kép középre igazítása */
+}
+
+
+h2{
+    text-align: center;
+}
+
+
+
+/* A label és input egy sorba igazítása */
+.form-container label,
+.form-container input {
+    display: inline-flex;
+    align-items: center;  /* Függőleges középre igazítás */
+    margin-right: 10px; /* Térköz a label és input között */
+}
+
+/* A form tartalmát is rendezzük */
+.form-container {
+    display: flex;
+    flex-direction: column; /* Az alapértelmezett irány maradjon oszlopos, de a sorban lévő elemek egy sorba kerülnek */
+    width: 100%;
+}
+
+.form-container input {
+    width: auto; /* Ha nem akarod, hogy az input kitöltse a sor teljes szélességét */
+    padding: 10px;
+    margin-left: 10px; /* Térköz a label és input között */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Form szűkítése és keretezés */
+.form-container {
+    display: none; /* Alapból rejtve */
+    position: relative;
+    padding: 20px;
+    background-color: rgba(165, 112, 69, 0.404);
+    max-width: 1200px; /* Maximális szélesség */
+    margin: 0 auto; /* Középre igazítás */
+    border-radius: 10px; /* Lekerekített sarkok */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enyhe árnyék */
+}
+
+/* Form aktív státusz */
+.form-container.active {
+    display: block;
+}
+
+/* Close button piros háttérrel, jobbra igazítva */
+.close-btn {
+    background-color: red; /* Piros háttér */
+    border: 2px solid red; /* Piros keret */
+    color: white; /* Fehér szín */
+    font-size: 24px; /* X méretének beállítása */
+    font-weight: bold;
+    padding: 5px 10px; /* Kisebb margó a szöveg körül */
+    cursor: pointer;
+    border-radius: 50%; /* Kör alakú gomb */
+    position: absolute; /* Pozicionálás */
+    top: 10px;
+    right: 10px; /* Jobbra igazítva */
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    background-color: white; /* Fehér háttér a hover állapotban */
+    color: red; /* Piros szín a hover állapotban */
+}
+
+/* Címek középre igazítása */
+.form-container h2 {
+    text-align: center; /* Cím középre igazítása */
+    margin-bottom: 20px; /* Kis margó a cím alatt */
+}
+
+/* Form elemek, gombok */
+.form-container input, .form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Gomb stílusok */
+.form-container button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #45a049;
+}
+
+/* Gombok középre igazítása */
+.gombok-container {
+    display: flex;
+    justify-content: center; /* Gombok középre igazítása vízszintesen */
+    align-items: center; /* Gombok középre igazítása függőlegesen, ha szükséges */
+    gap: 20px; /* Kis távolság a gombok között */
+    margin-top: 50px; /* Felső margó, hogy ne legyen túl közel a többi tartalomhoz */
+    margin-bottom: 30px; /* Térköz a gombok után */
+}
+
+/* Gombok alapstílusa */
+button.vevok_btn, button.eladok_btn {
+    padding: 12px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Vevőknek gomb stílusa */
+.vevok_btn {
+    background-color: #4CAF50; /* Zöld háttér */
+    color: white;
+}
+
+.vevok_btn:hover {
+    background-color: #45a049; /* Sötétebb zöld hover */
+}
+
+/* Eladóknak gomb stílusa */
+.eladok_btn {
+    background-color: #f44336; /* Piros háttér */
+    color: white;
+}
+
+.eladok_btn:hover {
+    background-color: #e53935; /* Sötétebb piros hover */
+}
+
+
+
+
+/* Reszponzív dizájn: Kis képernyőkön a gombok egymás alatt jelennek meg */
+@media (max-width: 768px) {
+    button.vevok_btn, button.eladok_btn {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+
+/*------------------------------------kapcsolat.html---------------------------------------------------------------------------------*/

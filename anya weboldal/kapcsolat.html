@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kállai Rózsa ingatlanszakértő</title>
+    <link rel="stylesheet" href="kapcsolat.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigáció -->
+    <nav>
+        <button class="navbar-toggler" onclick="toggleMenu()">☰</button>
+        <div class="navbar-menu" id="navbarMenu">
+            <a href="index.html">Főoldal</a>
+            <a href="szolgaltatasok.html">Szolgáltatások</a>
+            <a href="ingatlan_kinalat.html">Ingatlan kínálat</a>
+            <a href="kapcsolat.html">Kapcsolat</a>
+            <a href="rolam.html">Rólam</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="hero">
+        <h1>Találd meg álmaid otthonát még ma!!</h1>
+        <div class="hero_content">
+            <p>Kínálatomban a legjobb ingatlanok várnak Rád, <br>
+                személyre szabott ajánlatokkal, hogy könnyedén <br>
+                rátalálj a tökéletes Otthonra vagy befektetésre.</p>
+            
+            <!-- Képek konténer -->
+            <div class="hero_images">
+                <img src="./img/sajat_logo.png" alt="Cég logója" class="image-logo">
+                <img src="./img/kallai_rozsa.jpg" alt="Kállai Rózsa portré" class="image-portrait">
+            </div>
+
+            <!-- Tartalmi szekció -->
+            <section>
+                <p>Egyedi, prémium bemutatással 
+                    az ingatlanod olyan értéket kap, 
+                    amelytől magasan kiemelkedik a piacon.
+                </p>
+                <p>Mondj búcsút a felesleges érdeklődőknek! 
+                    Csak azok a vevők lépnek be az ingatlanodba, 
+                    akik már az online bemutató alapján 
+                    beleszerettek a házba.
+                </p>
+                <br>
+
+                <button  onclick="window.location.href='tel:+36704544871';">Lépj velem kapcsolatba!</button> 
+            </section>
+
+           <br>
+           <br>
+        </div>
+    </div>
+
+    <hr>
+
+
+
+    <div style="border: 2px solid #dd8f62; padding: 20px; border-radius: 10px; background-color: #f9f9f9; width: 80%; margin: 20px auto;">
+       
+            <h2  >Segítségre van szükséged az ingatlaneladásban? </h2> 
+            <p style="font-family: Arial, sans-serif; font-size: 20px;  color: #020202;">
+            Amennyiben bizalmat szavazol nekem, szakértő támogatással kísérlek végig az ingatlaneladás teljes folyamatán! <br>
+            Az alábbi gombra kattintva töltsd ki az űrlapot, és hamarosan felveszem veled a kapcsolatot!
+        </p>
+    </div>
+    
+    
+  <!-- Gombok a vevő és eladó formákhoz -->
+<div class="gombok-container">
+    <button class="vevok_btn" onclick="toggleForm('buyersForm')">Vevőknek</button>
+    <button class="eladok_btn" onclick="toggleForm('sellersForm')">Eladóknak</button>
+</div>
+
+
+    <!-- Form űrlapok -->
+   <div>
+    <div id="buyersForm" class="form-container">
+        <button class="close-btn" onclick="closeForm('buyersForm')">×</button>
+        <h2>Vevői érdeklődés</h2>
+        <form id="buyerForm" action="#" method="POST">
+
+            <label for="name">Név:</label>
+            <input type="text" id="name" name="name" required>
+            
+          
+            <label for="phone" class="required">Telefonszám:</label>
+            <input type="tel" id="phone" name="phone" pattern="^\+36\d{9}$" placeholder="+36xxxxxxxxx" required>
+
+            <label for="email" class="required">Email cím:</label>
+            <input type="email" id="email" name="email" placeholder="valami@valami.hu" required>
+
+           
+
+
+
+            <label for="name">Hol keres ingatlant?</label>
+            <input type="text" id="where" name="string" required>
+
+            <label for="message">Üzenet (max. 300 karakter):</label>
+            <textarea id="message" name="message" rows="4" maxlength="300"></textarea>
+
+            <button class="kuldes_btn" type="submit">Küldés</button>
+        </form>
+    </div>
+   </div>
+
+    <div>
+        <div id="sellersForm" class="form-container">
+            <button class="close-btn" onclick="closeForm('sellersForm')">×</button>
+            <h2>Eladói érdeklődés</h2>
+            <form id="sellerForm" action="#" method="POST">
+                <label for="name">Név:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="phone" class="required">Telefonszám:</label>
+                <input type="tel" id="phone" name="phone" pattern="^\+36\d{9}$" placeholder="+36xxxxxxxxx" required>
+    
+                <label for="email" class="required">Email cím:</label>
+                <input type="email" id="email" name="email" placeholder="valami@valami.hu" required>
+    
+                <label for="gender" class="required">Mit adna el?</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Családi ház</option>
+                    <option value="female">Lakás</option>
+                    <option value="female">Zártkert</option>
+                    <option value="female">Telek</option>
+                </select>
+                <br>
+                <br>
+                <label for="name">Hol szeretne eladni?</label>
+                <input type="text" id="where" name="string" required>
+
+
+                <label for="message">Üzenet (max. 300 karakter):</label>
+                <textarea id="message" name="message" rows="4" maxlength="300"></textarea>
+
+
+                <button class="kuldes_btn" type="submit">Küldés</button>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- Google Térkép beágyazása -->
+    <div class="google-map">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2719.333952200974!2d19.77794907669722!3d47.03367742736445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741632be8f446e1%3A0x138e8080aded0f79!2sOtthon%20Centrum%20Nagyk%C5%91r%C3%B6s!5e0!3m2!1sen!2shu!4v1736187089300!5m2!1sen!2shu" 
+            width="100%" 
+            height="400" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+
+    <div>
+        <img src="./img/oc_video.jpg" alt="" id="ocLogo">
+    </div>
+
+    <!-- Lábléc -->
+    <footer>
+        <h2>Kapcsolat</h2>
+
+        <div class="contact-info">
+            <p>Keressen bizalommal: <a href="tel: +36/70/454-4871">+36/70/454-4871</a></p>
+            <p>kallai.rozsa@oc.hu</p>
+            <a href="https://www.oc.hu/index.php/munkatarsaink/kallai-rozsa" target="_blank">Munkahelyi elérhetőségem:</a> <br> <br>
+            <a href="https://www.facebook.com/rozsa.kallai.7" target="_blank">Facebook oldalam</a>
+        </div>
+
+        <p>&copy; 2025 Kállai Rózsa ingatlanszakértő. Minden jog fenntartva.</p>
+    </footer>
+
+    <script>
+        /*hamburger menü */
+        function toggleMenu() {
+            const navbarMenu = document.getElementById("navbarMenu");
+            navbarMenu.classList.toggle("show");
+        }
+
+        // Funkció a formák megjelenítésére
+        function toggleForm(formId) {
+            const buyerForm = document.getElementById("buyersForm");
+            const sellerForm = document.getElementById("sellersForm");
+            if (formId === 'buyersForm') {
+                buyerForm.classList.add('active');
+                sellerForm.classList.remove('active');
+            } else if (formId === 'sellersForm') {
+                sellerForm.classList.add('active');
+                buyerForm.classList.remove('active');
+            }
+        }
+
+        // Funkció a formok bezárására
+function closeForm(formId) {
+    const form = document.getElementById(formId);
+    form.classList.remove('active');
+}
+    </script>
+</body>
+</html>
